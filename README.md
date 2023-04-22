@@ -10,6 +10,6 @@ In the simplest case, people could just forward any request to Open AI and just 
 * safety and
 * costs.
 
-Being compatible with the Open AI API even allows them to use their Node-RED implementations in software which was initially based on Open AI products.
+Being compatible with the Open AI API even allows them to use their Node-RED implementations in software which was initially based on Open AI products - such as [Auto-GPT](https://github.com/Significant-Gravitas/Auto-GPT).
 
 > Nota bene: this work is currently in progress, a first release is planned for monday, April 24th, 2023 - stay tuned.
