@@ -16,6 +16,10 @@ Being compatible with the Open AI API allows them to use their Node-RED implemen
 
 > Nota bene: this work is currently in progress, a first release is planned for monday, April 24th, 2023 - stay tuned.
 
+## Credits ##
+
+The Node-RED HTTP entry points are based on the [Open AI API documentation](https://platform.openai.com/docs/introduction) and an [OpenAPI specification for the Open AI API](https://github.com/openai/openai-openapi)
+
 ## License ##
 
 [MIT License](LICENSE.md)
