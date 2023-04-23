@@ -18,7 +18,7 @@ Being compatible with the Open AI API allows them to use their Node-RED implemen
 
 ## Credits ##
 
-The Node-RED HTTP entry points are based on the [Open AI API documentation](https://platform.openai.com/docs/introduction) and an [OpenAPI specification for the Open AI API](https://github.com/openai/openai-openapi)
+The Node-RED HTTP entry points are based on the [Open AI API documentation](https://platform.openai.com/docs/introduction) and an [OpenAPI specification for the Open AI API](https://github.com/openai/openai-openapi) (please use the author's fork of that specification if you plan to create other clients from it as that fork contains updated installation instructions)
 
 ## License ##
 
