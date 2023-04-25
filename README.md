@@ -24,6 +24,12 @@ In any case, this proxy gives you much more control over Open AI API requests wi
 
 To install these flows, simply open the Flow Editor of your Node-RED server and import the contents of file [OpenAI-API.json](./OpenAI-API.json) - best into a new workspace.
 
+### Note for Users of "node-red-within-express" ###
+
+These flows are fully compatible with [node-red-within-express](https://github.com/rozek/node-red-within-express). However, please remember that you will have to prepend the URLs of the flow's endpoints by the name of a virtual host, if you run the express server described there in the mode with virtual hosts processing:
+
+To give an example: change the URL of endpoint _[get] /models_ to `/.../models` and replace the ellipsis `...` by the name of the virtual host which should serve that endpoint.
+
 ## Usage ##
 
 By default, any incoming request is logged into the Node-RED Flow Editor's debug pane and simply passed to the original Open AI API - this is done by a [reusable flow](https://github.com/rozek/node-red-contrib-reusable-flows) node called "ask Open AI".
