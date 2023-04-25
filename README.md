@@ -22,7 +22,9 @@ In any case, this proxy gives you much more control over Open AI API requests wi
 
 ## Installation ##
 
-To install these flows, simply open the Flow Editor of your Node-RED server and import the contents of file [OpenAI-API.json](./OpenAI-API.json) - best into a new workspace.
+If not already done before, [install "reusable flows"](https://github.com/rozek/node-red-contrib-reusable-flows#installation) into your Node-RED server.
+
+Then, to install the flows from this repository, simply open the Flow Editor of your Node-RED server and import the contents of file [OpenAI-API.json](./OpenAI-API.json) - best into a new workspace.
 
 ### Note for Users of "node-red-within-express" ###
 
