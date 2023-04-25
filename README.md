@@ -46,7 +46,7 @@ where the ellipsis (`...`) denotes the actual API key. Sometimes this key is rea
 
 Just look for any occurance of `openai.api_key` in any script of your AI tool and
 
-* (if you want to hide your API key from the AI tool) replace the API key by something else (if you had to enter the key directly - otherwise make that change whereever required, e.g., in a configuration file (sometimes called `.env`), an environment variable, a configuration form etc.
+* (if you want to hide your API key from the AI tool) replace the API key by something else (if you had to enter the key directly - otherwise make that change whereever required, e.g., in a configuration file (sometimes called `.env`), an environment variable, a configuration form etc.)
 * add another line looking like<br>&nbsp;<br>`openai.api_base = "..."`<br>&nbsp;<br>where you replace the ellipsis (`...`) by the URL of your Node-RED server (without the actual HTTP endpoint paths `/models`, `/models/:model`, etc.)<br>&nbsp;<br>**Important: use the same indentation as in the line before (e.g., the one starting with `openai.api_key`) as proper indentation is relevant for Python scripts)**
 
 ## Credits ##
