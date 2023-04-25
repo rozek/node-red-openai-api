@@ -104,7 +104,7 @@ If you plan to run Auto-GPT within a [Docker](https://www.docker.com/) container
 
 ### BabyAGI ###
 
-(pending)
+(pending, Open AI seems to be overloaded and cancels any requests - therefore, I can't test right now)
 
 ## Credits ##
 
