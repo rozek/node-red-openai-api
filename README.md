@@ -30,7 +30,7 @@ By default, any incoming request is logged into the Node-RED Flow Editor's debug
 
 ![pre-implemented Open AI API Handlers](OpenAI-API-Handlers.png)
 
-If you like, you may edit the function node "configure Open AI API access" and enter your Open AI API key, if need be, together with your Open AI Organization there - if set, these settings will overwrite related headers in incoming HTTP requests.
+If you like, you may edit the function node "configure Open AI API access" and enter your Open AI API key, if need be, together with your Open AI Organization - if set, these settings will overwrite related headers in incoming HTTP requests.
 
 However, if you prefer, you may also replace the default behaviour of any HTTP endpoint - either by using "not-implemented" or by a node of your own.
 
