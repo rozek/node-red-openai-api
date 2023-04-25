@@ -84,8 +84,10 @@ Simply follow [this wonderful recipe](https://deliciousbrains.com/ssl-certificat
 If you plan to run Auto-GPT within a [Docker](https://www.docker.com/) container (and you should definitely do so), apply the following changes (depending on whether your server's certificate is an officially signed or a locally signed one):
 
 * with an officially signed certificate
-  * edit file `Dockerfile`
-  * edit file `.env`
+  * edit file `.env`<br>insert the following line at the beginning of this file:<br>&nbsp;<br>&nbsp; `OPENAI_API_BASE=https://host-name:port`<br>&nbsp;<br>Important:
+    * replace "host-name" with the name of your server (the same you used when requesting its certificate)
+    * if your server listens to a non-standard port, append ":" and the port number after the host name
+    * **very important**: do not end the API base setting with a slash - it won't work!
 * with a locally signed certificate
   * edit file `docker-compose.yaml`<br>find section `services:` > `auto-gpt` and append the following two lines<br>&nbsp;<br>&nbsp; `extra_hosts:`<br>&nbsp; `- "host-name:ip-address"`<br>&nbsp;<br>Important:
     * replace "host-name" with the name of your server (the same you used when creating its certificate)
@@ -96,7 +98,7 @@ If you plan to run Auto-GPT within a [Docker](https://www.docker.com/) container
   * edit file `.env`<br>insert the following lines at the beginning of this file:<br>&nbsp;<br>&nbsp; `OPENAI_API_BASE=https://host-name:port`<br>&nbsp; `SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt`<br>&nbsp; `REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt`<br>&nbsp;<br>Important:
     * replace "host-name" with the name of your server (the same you used when creating its certificate)
     * if your server listens to a non-standard port, append ":" and the port number after the host name
-    * **very important**: do not end the API base setting with a slash - it won#t work!
+    * **very important**: do not end the API base setting with a slash - it won't work!
 
 ### BabyAGI ###
 
