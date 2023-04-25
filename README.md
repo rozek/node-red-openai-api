@@ -7,7 +7,7 @@ This repository contains flows for [Node-RED](https://nodered.org/) which replic
 Possible use cases could be:
 
 * log any requests to the Open AI - either for reporting reasons or just to learn how other scripts (like [Auto-GPT](https://github.com/Significant-Gravitas/Auto-GPT) or [BabyAGI](https://github.com/yoheinakajima/babyagi)) use this API to reach their goals;
-* don't give your Open AI API key to potentially dangerous scripts! Instead, add it to these flows only and configure your untrusted scripts to use these endpoints as a proxy;
+* don't give your (secret!) Open AI API key to potentially dangerous scripts! Instead, add it to these flows only and configure your untrusted scripts to use these endpoints as a proxy;
 * replace some (or all) requests to the Open AI API by your own implementations - e.g., based on other flows which use [LLaMA](https://github.com/rozek/node-red-flow-llama), [Stanford Alpaca](https://github.com/rozek/node-red-flow-alpaca), or GPT4All [filtered](https://github.com/rozek/node-red-flow-gpt4all-filtered) or [unfiltered](https://github.com/rozek/node-red-flow-gpt4all-unfiltered) or [GPT4All-J](https://github.com/rozek/node-red-flow-gpt4all-j) models.
 
 In any case, this proxy gives you much more control over Open AI API requests with respect to
@@ -34,8 +34,20 @@ If you like, you may edit the function node "configure Open AI API access" and e
 
 However, if you prefer, you may also replace the default behaviour of any HTTP endpoint - either by using "not-implemented" or by a node of your own.
 
-## Configuring Python Scripts to use this Proxy ##
+## Configuring Python Scripts to use these Flows ##
 
+Nowadays, many AI tools and scripts are written in Python. These scripts usually import the [OpenAI Python Library](https://github.com/openai/openai-python) and then should include a line where the Open AI API key is set - this should look like
+
+```
+openai.api_key = ...
+```
+
+where the ellipsis (`...`) denotes the actual API key. Sometimes this key is read from an environment variable, sometimes you have to enter it yourself - but that's irrelevant.
+
+Just look for any occurance of `openai.api_key` in any script of your AI tool and
+
+* (if you want to hide your API key from the AI tool) replace the API key by something else (if you had to enter the key directly - otherwise make that change whereever required, e.g., in a configuration file (sometimes called `.env`), an environment variable, a configuration form etc.
+* add another line looking like<br>&nbsp;<br>`openai.api_base = "..."`<br>&nbsp;<br>where you replace the ellipsis (`...`) by the URL of your Node-RED server (without the actual HTTP endpoint paths `/models`, `/models/:model`, etc.)<br>&nbsp;<br>**Important: use the same indentation as in the line before (e.g., the one starting with `openai.api_key`) as proper indentation is relevant for Python scripts)**
 
 ## Credits ##
 
