@@ -20,6 +20,19 @@ In any case, this proxy gives you much more control over Open AI API requests wi
 
 > Nota bene: this work is currently in progress, a first release is planned for monday, April 24th, 2023 - stay tuned.
 
+## Installation ##
+
+To install these flows, simply open the Flow Editor of your Node-RED server and import the contents of file [OpenAI-API.json](./OpenAI-API.json) - best into a new workspace.
+
+## Usage ##
+
+By default, any incoming request is logged into the Node-RED Flow Editor's debug pane and simply passed to the Open AI API.
+
+![pre-implemented Open AI API Handlers](OpenAI-API-Handlers.png)
+
+## Configuring Python Scripts to use this Proxy ##
+
+
 ## Credits ##
 
 The Node-RED HTTP entry points are based on the [Open AI API documentation](https://platform.openai.com/docs/introduction) and an [OpenAPI specification for the Open AI API](https://github.com/openai/openai-openapi) (please use the [author's fork of that specification](https://github.com/rozek/openai-openapi) if you plan to create other clients from it as that fork contains updated installation instructions)
