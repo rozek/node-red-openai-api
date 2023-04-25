@@ -55,6 +55,40 @@ Just look for any occurance of `openai.api_key` in any script of your AI tool an
 * (if you want to hide your API key from the AI tool) replace the API key by something else (if you had to enter the key directly - otherwise make that change whereever required, e.g., in a configuration file (sometimes called `.env`), an environment variable, a configuration form etc.)
 * add another line looking like<br>&nbsp;<br>`openai.api_base = "..."`<br>&nbsp;<br>where you replace the ellipsis (`...`) by the URL of your Node-RED server (without the actual HTTP endpoint paths `/models`, `/models/:model`, etc.)<br>&nbsp;<br>**Important: use the same indentation as in the line before (e.g., the one starting with `openai.api_key`) as proper indentation is relevant for Python scripts)**
 
+## Recipes ##
+
+This section contains concrete instructions how to modify a (hopefully growing) list of AI tools such that they use this Open AI API proxy.
+
+### Preconditions ###
+
+Redirecting requests to your own server nowadays requires the use of HTTPS rather than HTTP. HTTPS is based on "Transport Layer Security" (TLS) and one of its security measures is to require servers to identify themselves using a certificate. Normally, such a certificate has to be "issued" and "signed" by a well-known "Certificate Authority" (CA) - [Lets Encrypt](https://letsencrypt.org) is such a well-known CA.
+
+If your Node-RED server can be accessed from the public internet, just request a certificate from Lets Encrypt, install it in your server and you're fine.
+
+However, if your server is a local one, Lets Encrypt cannot prove that server's identity and won't issue any certificate for it. Formerly, you would just have created a "self-signed certificate" and ignored any warnings thrown at you by your browsers and tools like `curl` - but that's no longer possible.
+
+As a consequence you now have to
+
+* create your own local "Certificate Authority"
+* create a certificate for your server which is then signed by your local CA and
+* install the certificate for your local CA in any system from which you plan to send requests to your server - this makes your CA as well-known as the global ones
+
+Fortunately, this approach is not too difficult but avoids many problems where some script crashes somehow and it turns out to be difficult to find the underlying cause.
+
+Simply follow [this wonderful recipe](https://deliciousbrains.com/ssl-certificate-authority-for-local-https-development/).
+
+### Auto-GPT ###
+
+[Auto-GPT](https://github.com/Significant-Gravitas/Auto-GPT) is perhaps the most famous of the currently emerging "autonomous agents". Modifying its script is not too difficult, but requires to touch several files...
+
+If you plan to run Auto-GPT within a [Docker](https://www.docker.com/) container (and you should definitely do so), apply the following changes:
+
+* 
+
+### BabyAGI ###
+
+(pending)
+
 ## Credits ##
 
 The Node-RED HTTP entry points are based on the [Open AI API documentation](https://platform.openai.com/docs/introduction) and an [OpenAPI specification for the Open AI API](https://github.com/openai/openai-openapi) (please use the [author's fork of that specification](https://github.com/rozek/openai-openapi) if you plan to create other clients from it as that fork contains updated installation instructions)
