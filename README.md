@@ -18,7 +18,7 @@ In any case, this proxy gives you much more control over Open AI API requests wi
 
 ![a small detail of the whole Open AI API replica](OpenAI-API_detail.png)
 
-> Nota bene: this work is currently in progress, a first release is planned for monday, April 24th, 2023 - stay tuned.
+> Just a small note: if you like this work and plan to use it, consider "starring" this repository (you will find the "Star" button on the top right of this page), so that I know which of my repositories to take most care of.
 
 ## Installation ##
 
