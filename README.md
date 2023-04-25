@@ -36,7 +36,7 @@ However, if you prefer, you may also replace the default behaviour of any HTTP e
 
 ## Configuring Python Scripts to use these Flows ##
 
-Nowadays, many AI tools and scripts are written in Python. These scripts usually import the [OpenAI Python Library](https://github.com/openai/openai-python) and define the Open AI API key in aline that should look like
+Nowadays, many AI tools and scripts are written in Python. These scripts usually import the [OpenAI Python Library](https://github.com/openai/openai-python) and define the Open AI API key in a line that should look like
 
 ```
 openai.api_key = ...
