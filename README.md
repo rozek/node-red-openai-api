@@ -26,9 +26,13 @@ To install these flows, simply open the Flow Editor of your Node-RED server and 
 
 ## Usage ##
 
-By default, any incoming request is logged into the Node-RED Flow Editor's debug pane and simply passed to the Open AI API.
+By default, any incoming request is logged into the Node-RED Flow Editor's debug pane and simply passed to the Open AI API - this is done by a [reusable flow](https://github.com/rozek/node-red-contrib-reusable-flows) node called "ask Open AI".
 
 ![pre-implemented Open AI API Handlers](OpenAI-API-Handlers.png)
+
+If you like, you may edit the function node "configure Open AI API access" and enter your Open AI API key and, if need be, your Open AI Organization there - if set, these settings will overwrite related headers in incoming HTTP requests.
+
+However, if you prefer, you replace the default behaviour of any HTTP endpoint - either by using "not-implemented" or by a node of your won.
 
 ## Configuring Python Scripts to use this Proxy ##
 
