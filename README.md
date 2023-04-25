@@ -28,7 +28,7 @@ To install these flows, simply open the Flow Editor of your Node-RED server and 
 
 These flows are fully compatible with [node-red-within-express](https://github.com/rozek/node-red-within-express). However, please remember that you will have to prepend the URLs of the flow's endpoints by the name of a virtual host, if you run the express server described there in the mode with virtual hosts processing:
 
-To give an example: change the URL of endpoint _[get] /models_ to `/.../models` and replace the ellipsis `...` by the name of the virtual host which should serve that endpoint.
+To give an example: change the URL of endpoint "_[get] /models_" to `/.../models` and replace the ellipsis `...` by the name of the virtual host which should serve that endpoint.
 
 ## Usage ##
 
