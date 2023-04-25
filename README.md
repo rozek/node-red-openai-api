@@ -81,7 +81,7 @@ Simply follow [this wonderful recipe](https://deliciousbrains.com/ssl-certificat
 
 [Auto-GPT](https://github.com/Significant-Gravitas/Auto-GPT) is perhaps the most famous of the currently emerging "autonomous agents". Modifying its script is not too difficult, but requires to touch several files...
 
-If you plan to run Auto-GPT within a [Docker](https://www.docker.com/) container (and you should definitely do so), apply the following changes (depending on whether your server's certificate is an officially signe or a locally signed one):
+If you plan to run Auto-GPT within a [Docker](https://www.docker.com/) container (and you should definitely do so), apply the following changes (depending on whether your server's certificate is an officially signed or a locally signed one):
 
 * with an officially signed certificate
   * edit file `Dockerfile`
@@ -91,8 +91,12 @@ If you plan to run Auto-GPT within a [Docker](https://www.docker.com/) container
     * replace "host-name" with the name of your server (the same you used when creating its certificate)
     * replace "ip-address" with that server's local IP address
     * when adding these two lines, make sure that they have the same indentation as the line above, as proper indentation is relevant for YAML
-  * edit file `Dockerfile`
-  * edit file `.env`
+  * edit file `Dockerfile`<br>after line `FROM python:3.10-slim` append the following lines<br>&nbsp;<br>&nbsp; `ADD localCA.pem /usr/local/share/ca-certificates/localCA.crt`<br>&nbsp; `RUN chmod 644 /usr/local/share/ca-certificates/localCA.crt && update-ca-certificates`<br>&nbsp; `RUN export SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt`<br>&nbsp; `RUN export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt`<br>&nbsp;<br>Important:
+    * the first of these lines assumes, that you copied the certificate for your local CA into the root folder of the Auto-GPT repository and named that copy "localCA.pem"
+  * edit file `.env`<br>insert the following lines at the beginning of this file:<br>&nbsp;<br>&nbsp; `OPENAI_API_BASE=https://host-name:port`<br>&nbsp; `SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt`<br>&nbsp; `REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt`<br>&nbsp;<br>Important:
+    * replace "host-name" with the name of your server (the same you used when creating its certificate)
+    * if your server listens to a non-standard port, append ":" and the port number after the host name
+    * **very important**: do not end the API base setting with a slash - it won#t work!
 
 ### BabyAGI ###
 
