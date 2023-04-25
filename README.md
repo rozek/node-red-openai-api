@@ -32,7 +32,7 @@ By default, any incoming request is logged into the Node-RED Flow Editor's debug
 
 If you like, you may edit the function node "configure Open AI API access" and enter your Open AI API key and, if need be, your Open AI Organization there - if set, these settings will overwrite related headers in incoming HTTP requests.
 
-However, if you prefer, you replace the default behaviour of any HTTP endpoint - either by using "not-implemented" or by a node of your won.
+However, if you prefer, you may also replace the default behaviour of any HTTP endpoint - either by using "not-implemented" or by a node of your own.
 
 ## Configuring Python Scripts to use this Proxy ##
 
