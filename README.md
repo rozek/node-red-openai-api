@@ -26,7 +26,7 @@ To install these flows, simply open the Flow Editor of your Node-RED server and 
 
 ## Usage ##
 
-By default, any incoming request is logged into the Node-RED Flow Editor's debug pane and simply passed to the Open AI API - this is done by a [reusable flow](https://github.com/rozek/node-red-contrib-reusable-flows) node called "ask Open AI".
+By default, any incoming request is logged into the Node-RED Flow Editor's debug pane and simply passed to the original Open AI API - this is done by a [reusable flow](https://github.com/rozek/node-red-contrib-reusable-flows) node called "ask Open AI".
 
 ![pre-implemented Open AI API Handlers](OpenAI-API-Handlers.png)
 
