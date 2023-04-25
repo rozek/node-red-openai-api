@@ -87,7 +87,10 @@ If you plan to run Auto-GPT within a [Docker](https://www.docker.com/) container
   * edit file `Dockerfile`
   * edit file `.env`
 * with a locally signed certificate
-  * edit file `docker-compose.yaml`<br>find section `services:` > `auto-gpt` and append the following two lines<br>`extra_hosts:`<br>`- "host-name:ip-address"`
+  * edit file `docker-compose.yaml`<br>find section `services:` > `auto-gpt` and append the following two lines<br>&nbsp;<br>&nbsp; `extra_hosts:`<br>&nbsp; `- "host-name:ip-address"`<br>&nbsp;<br>Important:
+    * replace "host-name" with the name of your server (the same you used when creating its certificate)
+    * replace "ip-address" with that server's local IP address
+    * when adding these two lines, make sure that they have the same indentation as the line above, as proper indentation is relevant for YAML
   * edit file `Dockerfile`
   * edit file `.env`
 
