@@ -81,9 +81,15 @@ Simply follow [this wonderful recipe](https://deliciousbrains.com/ssl-certificat
 
 [Auto-GPT](https://github.com/Significant-Gravitas/Auto-GPT) is perhaps the most famous of the currently emerging "autonomous agents". Modifying its script is not too difficult, but requires to touch several files...
 
-If you plan to run Auto-GPT within a [Docker](https://www.docker.com/) container (and you should definitely do so), apply the following changes:
+If you plan to run Auto-GPT within a [Docker](https://www.docker.com/) container (and you should definitely do so), apply the following changes (depending on whether your server's certificate is an officially signe or a locally signed one):
 
-* 
+* with an officially signed certificate
+  * edit file `Dockerfile`
+  * edit file `.env`
+* with a locally signed certificate
+  * edit file `docker-compose.yaml`<br>find section `services:` > `auto-gpt` and append the following two lines<br>`extra_hosts:`<br>`- "host-name:ip-address"`
+  * edit file `Dockerfile`
+  * edit file `.env`
 
 ### BabyAGI ###
 
