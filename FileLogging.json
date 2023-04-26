@@ -1,0 +1,45 @@
+[
+    {
+        "id": "f5d36d2a3ba5d76a",
+        "type": "file",
+        "z": "225e49ac1693f221",
+        "name": "",
+        "filename": "OpenAI-Requests.txt",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 1920,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ddb7c36fd01c9587",
+        "type": "change",
+        "z": "225e49ac1693f221",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "\"{\\n\" &\t  \"\\\"endpoint\\\":\\\"\" & req.originalUrl & \"\\\",\\n\" &\t  \"\\\"data\\\":\" & payload & \"\\n\" &\t\"},\"",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1830,
+        "y": 340,
+        "wires": [
+            [
+                "f5d36d2a3ba5d76a"
+            ]
+        ]
+    }
+]
