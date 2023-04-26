@@ -42,6 +42,18 @@ If you like, you may edit the function node "configure Open AI API access" and e
 
 However, if you prefer, you may also replace the default behaviour of any HTTP endpoint - either by using "not-implemented" or by a node of your own.
 
+### Logging into a File ###
+
+If you prefer to log requests into a file, then just import the contents of file [FileLogging.json](./FileLogging.json) and wire it as shown below:
+
+![how to wire the file logging flow](./FileLogging.png)
+
+Any requests will then be written to file `OpenAI-Requests.txt` - in a format that is close to JSON: if you really want to treat its contents as JSON input, just
+
+* prepend an opening bracket `[`,
+* remove the last character (its a comma `,`) and
+* append a closing bracket `]` instead.
+
 ## Configuring Python Scripts to use these Flows ##
 
 Nowadays, many AI tools and scripts are written in Python. These scripts usually import the [OpenAI Python Library](https://github.com/openai/openai-python) and define the Open AI API key in a line that should look like
