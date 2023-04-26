@@ -48,7 +48,7 @@ If you prefer to log requests into a file, then just import the contents of file
 
 ![how to wire the file logging flow](./FileLogging.png)
 
-Any requests will then be written to file `OpenAI-Requests.txt` - in a format that is close to JSON: if you really want to treat its contents as JSON input, just
+Any requests will then be written to file `OpenAI-Requests.txt` in the installation folder of your Node-RED server - in a format that is close to JSON: if you really want to treat its contents as JSON input, just
 
 * prepend an opening bracket `[`,
 * remove the last character (its a comma `,`) and
